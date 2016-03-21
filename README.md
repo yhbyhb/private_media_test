@@ -3,7 +3,13 @@ django-private-media test project
 
 ## Installation
 ```
-pip install django-private-media 
+sudo pip install django-private-media 
+```
+apache
+```
+sudo apt-get install libapache2-mod-xsendfile
+sudo a2enmod xsendfile
+sudo service apache2 restart
 ```
 
 ## links
