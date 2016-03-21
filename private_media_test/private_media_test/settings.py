@@ -37,6 +37,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'media_test',
+    'private_media',    
 )
 
 MIDDLEWARE_CLASSES = (
@@ -100,3 +102,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+PRIVATE_MEDIA_URL = '/private/'
+PRIVATE_MEDIA_ROOT = os.path.join(BASE_DIR, 'private')
+
+if DEBUG:
+    # dev
+    PRIVATE_MEDIA_SERVER = 'private_media.servers.DefaultServer'
+else:
+    # prod
+    PRIVATE_MEDIA_SERVER = 'private_media.servers.ApacheXSendfileServer'
+    #PRIVATE_MEDIA_SERVER_OPTIONS = {'arg1': 1, ...}  # (optional) kwargs to init server
