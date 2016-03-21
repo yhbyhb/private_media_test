@@ -50,11 +50,6 @@ configuration = '''
 
         XSendFile on
         XSendFilePath {0}/private
-        Alias /private {0}/private
-        <Directory {0}/private>
-            Order Deny,Allow
-            Allow from all
-        </Directory>
 
         WSGIDaemonProcess {1} python-path={0}/
         WSGIProcessGroup {1}
