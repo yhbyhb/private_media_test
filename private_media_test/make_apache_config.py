@@ -50,6 +50,7 @@ configuration = '''
 
         XSendFile on
         XSendFilePath {0}/private
+        Alias /private {0}/private
         <Directory {0}/private>
             Order Deny,Allow
             Allow from all
